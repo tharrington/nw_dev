@@ -1,0 +1,17 @@
+<aura:component 
+    implements="flexipage:availableForRecordHome,force:hasRecordId" 
+    access="global" 
+    controller="nw_RecordOwnerCtrl">
+    
+    <!-- Event Handlers -->
+	<aura:handler name="init" value="{!this}" action="{!c.init}"/>
+
+	<!-- Component Variables -->
+    <aura:attribute name="recordOwner"  type="Object" />
+    <aura:attribute name="objectType"   type="String" default="Account" />
+
+    <aura:if isTrue="{!v.recordOwner}">
+        <h1>Record Owner: {!v.recordOwner.recordOwnerName}</h1>
+        <img src="{!v.recordOwner.recordOwnerImage}"  class="img-fluid" alt="Responsive image"/>
+    </aura:if>
+</aura:component>
